@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace KHENSYS.HRMANAGER.API
 {
@@ -13,4 +13,3 @@ namespace KHENSYS.HRMANAGER.API
         public string Summary { get; set; }
     }
 }
-
