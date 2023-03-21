@@ -11,6 +11,7 @@ namespace KHENSYS.HRMANAGER.APPLICATION.Interfaces
     {
         DbSet<Permission> Permission { get; set; }
         DbSet<PermissionType> PermissionType { get; set; }
+        void OnModelCreating(ModelBuilder modelBuilder);
         Task<int> SaveChanges();
     }
 }
