@@ -24,5 +24,20 @@
             <param name="id"></param>
             <returns></returns>
         </member>
+        <member name="M:KHENSYS.HRMANAGER.API.Controllers.PermissionsController.Delete(System.Int32)">
+            <summary>
+            Deletes Permission Entity based on Id.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KHENSYS.HRMANAGER.API.Controllers.PermissionsController.Update(System.Int32,KHENSYS.HRMANAGER.APPLICATION.Features.Command.UpdatePermissionCommand)">
+            <summary>
+            Updates the Permission Entity based on Id.
+            </summary>
+            <param name="id"></param>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>
