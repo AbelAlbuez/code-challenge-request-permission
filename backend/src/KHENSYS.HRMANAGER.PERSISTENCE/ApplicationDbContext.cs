@@ -27,6 +27,10 @@ namespace KHENSYS.HRMANAGER.PERSISTENCE
                 new PermissionType { Id = 2, Description = "Diligencias" },
                 new PermissionType { Id = 3, Description = "Familia" }
             );
+
+            modelBuilder.Entity<Permission>().HasData(
+               new { Id = 1, EmployeeName = "Abel", EmployeeLastName = "Albuez", RequestDate = DateTime.Now, PermissionTypeId = 1 }
+           );
         }
     }
 }

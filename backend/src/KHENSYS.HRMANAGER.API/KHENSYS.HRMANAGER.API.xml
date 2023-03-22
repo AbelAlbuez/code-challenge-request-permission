@@ -4,5 +4,18 @@
         <name>KHENSYS.HRMANAGER.API</name>
     </assembly>
     <members>
+        <member name="M:KHENSYS.HRMANAGER.API.Controllers.PermissionController.GetAll">
+            <summary>
+            Gets all Permissions.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KHENSYS.HRMANAGER.API.Controllers.PermissionController.GetById(System.Int32)">
+            <summary>
+            Gets Permission Entity by Id.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>

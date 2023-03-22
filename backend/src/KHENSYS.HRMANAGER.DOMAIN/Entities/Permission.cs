@@ -8,9 +8,9 @@ namespace KHENSYS.HRMANAGER.DOMAIN.Entities
     public class Permission : BaseEntity
     {
         [Required]
-        public string Name { get; set; }
+        public string EmployeeName { get; set; }
         [Required]
-        public string LastName { get; set; }
+        public string EmployeeLastName { get; set; }
         [Required]
         public DateTime RequestDate { get; set; }
     }

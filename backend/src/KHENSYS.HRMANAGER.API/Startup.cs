@@ -41,6 +41,15 @@ namespace KHENSYS.HRMANAGER.API
             });
             #endregion
 
+            #region API Versioning
+            services.AddApiVersioning(config =>
+            {
+                config.DefaultApiVersion = new ApiVersion(1, 0);
+                config.AssumeDefaultVersionWhenUnspecified = true;
+                config.ReportApiVersions = true;
+            });
+            #endregion
+
             services.AddApplication();
             services.AddPersistence(Configuration);
             services.AddControllers();

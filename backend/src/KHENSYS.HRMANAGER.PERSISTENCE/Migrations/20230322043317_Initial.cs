@@ -26,8 +26,8 @@ namespace KHENSYS.HRMANAGER.PERSISTENCE.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(nullable: false),
-                    LastName = table.Column<string>(nullable: false),
+                    EmployeeName = table.Column<string>(nullable: false),
+                    EmployeeLastName = table.Column<string>(nullable: false),
                     RequestDate = table.Column<DateTime>(nullable: false),
                     PermissionTypeId = table.Column<int>(nullable: true)
                 },
@@ -56,6 +56,11 @@ namespace KHENSYS.HRMANAGER.PERSISTENCE.Migrations
                 table: "PermissionTypes",
                 columns: new[] { "Id", "Description" },
                 values: new object[] { 3, "Familia" });
+
+            migrationBuilder.InsertData(
+                table: "Permissions",
+                columns: new[] { "Id", "EmployeeLastName", "EmployeeName", "PermissionTypeId", "RequestDate" },
+                values: new object[] { 1, "Albuez", "Abel", 1, new DateTime(2023, 3, 22, 0, 33, 16, 785, DateTimeKind.Local).AddTicks(2694) });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Permissions_PermissionTypeId",

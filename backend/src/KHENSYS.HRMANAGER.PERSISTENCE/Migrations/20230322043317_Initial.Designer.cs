@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KHENSYS.HRMANAGER.PERSISTENCE.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230322040947_Initial")]
+    [Migration("20230322043317_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -28,11 +28,11 @@ namespace KHENSYS.HRMANAGER.PERSISTENCE.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("LastName")
+                    b.Property<string>("EmployeeLastName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("EmployeeName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -47,6 +47,16 @@ namespace KHENSYS.HRMANAGER.PERSISTENCE.Migrations
                     b.HasIndex("PermissionTypeId");
 
                     b.ToTable("Permissions");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            EmployeeLastName = "Albuez",
+                            EmployeeName = "Abel",
+                            PermissionTypeId = 1,
+                            RequestDate = new DateTime(2023, 3, 22, 0, 33, 16, 785, DateTimeKind.Local).AddTicks(2694)
+                        });
                 });
 
             modelBuilder.Entity("KHENSYS.HRMANAGER.DOMAIN.Entities.PermissionType", b =>
