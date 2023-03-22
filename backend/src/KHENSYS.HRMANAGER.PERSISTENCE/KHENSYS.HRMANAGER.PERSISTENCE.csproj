@@ -1,7 +1,29 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20230322035516_Initial.cs" />
+    <Compile Remove="Migrations\20230322035516_Initial.Designer.cs" />
+    <Compile Remove="Migrations\20230322035753_Initial.cs" />
+    <Compile Remove="Migrations\20230322035753_Initial.Designer.cs" />
+    <Compile Remove="Migrations\20230322040350_Initial.cs" />
+    <Compile Remove="Migrations\20230322040350_Initial.Designer.cs" />
+    <Compile Remove="Migrations\20230322040605_Initial.cs" />
+    <Compile Remove="Migrations\20230322040605_Initial.Designer.cs" />
+    <Compile Remove="Migrations\20230322040710_SeedData.cs" />
+    <Compile Remove="Migrations\20230322040710_SeedData.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.32" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.32" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\KHENSYS.HRMANAGER.APPLICATION\KHENSYS.HRMANAGER.APPLICATION.csproj" />
+  </ItemGroup>
 
 </Project>

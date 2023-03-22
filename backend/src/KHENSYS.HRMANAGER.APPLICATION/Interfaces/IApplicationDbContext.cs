@@ -1,4 +1,5 @@
 ﻿using KHENSYS.HRMANAGER.DOMAIN;
+using KHENSYS.HRMANAGER.DOMAIN.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -7,11 +8,10 @@ using System.Threading.Tasks;
 
 namespace KHENSYS.HRMANAGER.APPLICATION.Interfaces
 {
-    public interface IApplicatoinDbContext
+    public interface IApplicationDbContext
     {
-        DbSet<Permission> Permission { get; set; }
-        DbSet<PermissionType> PermissionType { get; set; }
-        void OnModelCreating(ModelBuilder modelBuilder);
+        DbSet<Permission> Permissions { get; set; }
+        DbSet<PermissionType> PermissionTypes { get; set; }
         Task<int> SaveChanges();
     }
 }

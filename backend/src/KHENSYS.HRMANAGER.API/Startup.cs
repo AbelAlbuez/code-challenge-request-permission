@@ -1,3 +1,5 @@
+using KHENSYS.HRMANAGER.APPLICATION;
+using KHENSYS.HRMANAGER.PERSISTENCE;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -38,8 +40,9 @@ namespace KHENSYS.HRMANAGER.API
 
             });
             #endregion
-            
 
+            services.AddApplication();
+            services.AddPersistence(Configuration);
             services.AddControllers();
         }
 
