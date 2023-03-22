@@ -15,7 +15,7 @@ namespace KHENSYS.HRMANAGER.PERSISTENCE
         public DbSet<Permission> Permissions { get; set; }
         public DbSet<PermissionType> PermissionTypes { get; set; }
 
-        public async Task<int> SaveChanges()
+        public async Task<int> SaveChangesAsync()
         {
             return await base.SaveChangesAsync();
         }
@@ -29,7 +29,7 @@ namespace KHENSYS.HRMANAGER.PERSISTENCE
             );
 
             modelBuilder.Entity<Permission>().HasData(
-               new { Id = 1, EmployeeName = "Abel", EmployeeLastName = "Albuez", RequestDate = DateTime.Now, PermissionTypeId = 1 }
+               new Permission { Id = 1, EmployeeName = "Abel", EmployeeLastName = "Albuez", RequestDate = DateTime.Now, PermissionTypeId = 1 }
            );
         }
     }

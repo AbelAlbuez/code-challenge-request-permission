@@ -13,5 +13,9 @@ namespace KHENSYS.HRMANAGER.DOMAIN.Entities
         public string EmployeeLastName { get; set; }
         [Required]
         public DateTime RequestDate { get; set; }
+
+        [Required]
+        public int PermissionTypeId { get; set; }
+        public PermissionType PermissionType { get; set; }
     }
 }

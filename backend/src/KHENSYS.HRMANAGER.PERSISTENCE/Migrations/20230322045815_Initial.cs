@@ -29,7 +29,7 @@ namespace KHENSYS.HRMANAGER.PERSISTENCE.Migrations
                     EmployeeName = table.Column<string>(nullable: false),
                     EmployeeLastName = table.Column<string>(nullable: false),
                     RequestDate = table.Column<DateTime>(nullable: false),
-                    PermissionTypeId = table.Column<int>(nullable: true)
+                    PermissionTypeId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -39,7 +39,7 @@ namespace KHENSYS.HRMANAGER.PERSISTENCE.Migrations
                         column: x => x.PermissionTypeId,
                         principalTable: "PermissionTypes",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.InsertData(
@@ -60,7 +60,7 @@ namespace KHENSYS.HRMANAGER.PERSISTENCE.Migrations
             migrationBuilder.InsertData(
                 table: "Permissions",
                 columns: new[] { "Id", "EmployeeLastName", "EmployeeName", "PermissionTypeId", "RequestDate" },
-                values: new object[] { 1, "Albuez", "Abel", 1, new DateTime(2023, 3, 22, 0, 33, 16, 785, DateTimeKind.Local).AddTicks(2694) });
+                values: new object[] { 1, "Albuez", "Abel", 1, new DateTime(2023, 3, 22, 0, 58, 14, 938, DateTimeKind.Local).AddTicks(787) });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Permissions_PermissionTypeId",

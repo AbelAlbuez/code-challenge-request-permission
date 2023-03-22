@@ -4,13 +4,20 @@
         <name>KHENSYS.HRMANAGER.API</name>
     </assembly>
     <members>
-        <member name="M:KHENSYS.HRMANAGER.API.Controllers.PermissionController.GetAll">
+        <member name="M:KHENSYS.HRMANAGER.API.Controllers.PermissionsController.Create(KHENSYS.HRMANAGER.APPLICATION.Features.Command.CreatePermissionCommand)">
+            <summary>
+            Creates a New Permission.
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KHENSYS.HRMANAGER.API.Controllers.PermissionsController.GetAll">
             <summary>
             Gets all Permissions.
             </summary>
             <returns></returns>
         </member>
-        <member name="M:KHENSYS.HRMANAGER.API.Controllers.PermissionController.GetById(System.Int32)">
+        <member name="M:KHENSYS.HRMANAGER.API.Controllers.PermissionsController.GetById(System.Int32)">
             <summary>
             Gets Permission Entity by Id.
             </summary>

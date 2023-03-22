@@ -1,12 +1,24 @@
-﻿using KHENSYS.HRMANAGER.APPLICATION.Features.Queries;
+﻿using KHENSYS.HRMANAGER.APPLICATION.Features.Command;
+using KHENSYS.HRMANAGER.APPLICATION.Features.Queries;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
 namespace KHENSYS.HRMANAGER.API.Controllers
 {
     [ApiVersion("1.0")]
-    public class PermissionController : BaseApiController
+    public class PermissionsController : BaseApiController
     {
+        /// <summary>
+        /// Creates a New Permission.
+        /// </summary>
+        /// <param name="command"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public async Task<IActionResult> Create(CreatePermissionCommand command)
+        {
+            return Ok(await Mediator.Send(command));
+        }
+
         /// <summary>
         /// Gets all Permissions.
         /// </summary>

@@ -34,7 +34,7 @@ namespace KHENSYS.HRMANAGER.PERSISTENCE.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("PermissionTypeId")
+                    b.Property<int>("PermissionTypeId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("RequestDate")
@@ -53,7 +53,7 @@ namespace KHENSYS.HRMANAGER.PERSISTENCE.Migrations
                             EmployeeLastName = "Albuez",
                             EmployeeName = "Abel",
                             PermissionTypeId = 1,
-                            RequestDate = new DateTime(2023, 3, 22, 0, 33, 16, 785, DateTimeKind.Local).AddTicks(2694)
+                            RequestDate = new DateTime(2023, 3, 22, 0, 58, 14, 938, DateTimeKind.Local).AddTicks(787)
                         });
                 });
 
@@ -92,9 +92,11 @@ namespace KHENSYS.HRMANAGER.PERSISTENCE.Migrations
 
             modelBuilder.Entity("KHENSYS.HRMANAGER.DOMAIN.Entities.Permission", b =>
                 {
-                    b.HasOne("KHENSYS.HRMANAGER.DOMAIN.Entities.PermissionType", null)
+                    b.HasOne("KHENSYS.HRMANAGER.DOMAIN.Entities.PermissionType", "PermissionType")
                         .WithMany("Permission")
-                        .HasForeignKey("PermissionTypeId");
+                        .HasForeignKey("PermissionTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }
